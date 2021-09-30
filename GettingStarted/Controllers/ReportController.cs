@@ -19,8 +19,13 @@ namespace GettingStarted.Controllers
 
         public IActionResult Message()
         {
-            return View(new MessageViewModel { Message = "Hello View", From = "Controller Message action" }) ;
-           
+            ViewData["Message"] = "Hello View";
+            ViewData["From"] = "Controller Message action";
+            return View();
+            // alt:
+            // return View(new MessageViewModel { Message = "Hello View", From = "Controller Message action" });
         }
+
+        
     }
 }
