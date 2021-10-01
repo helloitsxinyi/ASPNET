@@ -22,7 +22,12 @@ namespace GettingStarted.Controllers
             ViewData["Message"] = "Hello View";
             ViewData["From"] = "Controller Message action";
             return View();
-            // alt:
+
+            // better to write directly to ViewData object. Alt:
+            //MessageViewModel a = new MessageViewModel { Message = "Hello View", From = "Controller Message" };
+            //return View(a);
+
+            // Another alt:
             // return View(new MessageViewModel { Message = "Hello View", From = "Controller Message action" });
         }
 
