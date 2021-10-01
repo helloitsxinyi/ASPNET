@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.8
@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET_MVC", "ASPNET_MVC\ASPNET_MVC.csproj", "{5C3F6B9E-EB36-479D-80AC-3C7857864810}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStarted", "GettingStarted\GettingStarted.csproj", "{B3B47868-98BF-4E69-9DA7-99D46D3422F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingWshp", "RoutingWshp\RoutingWshp.csproj", "{ED5A4F38-4317-4346-9279-AD5BDA094FBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B3B47868-98BF-4E69-9DA7-99D46D3422F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3B47868-98BF-4E69-9DA7-99D46D3422F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B47868-98BF-4E69-9DA7-99D46D3422F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5A4F38-4317-4346-9279-AD5BDA094FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5A4F38-4317-4346-9279-AD5BDA094FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5A4F38-4317-4346-9279-AD5BDA094FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5A4F38-4317-4346-9279-AD5BDA094FBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
