@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingWshp", "RoutingWshp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreWshp", "EFCoreWshp\EFCoreWshp.csproj", "{D28009B8-1910-434D-A4D5-2CB8C9CAFD68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchUsers", "SearchUsers\SearchUsers.csproj", "{20CB1EF5-E776-4DB9-B05E-638B19625BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D28009B8-1910-434D-A4D5-2CB8C9CAFD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D28009B8-1910-434D-A4D5-2CB8C9CAFD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D28009B8-1910-434D-A4D5-2CB8C9CAFD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
