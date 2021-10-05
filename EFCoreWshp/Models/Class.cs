@@ -23,7 +23,7 @@ namespace EFCoreWshp.Models
         public float Fee { get; set; }
 
         // why should use Guid type here instead of Module type?
-        public virtual Module Module { get; set; }
+        public virtual Guid ModuleId { get; set; }
         public virtual ICollection<ClassDays> ClassDays { get; set; }
         // impt to have the s in students! so that new ClassStudent table will have cols StudentsId with s, not studentId
         public virtual ICollection<Student> Students { get; set; }

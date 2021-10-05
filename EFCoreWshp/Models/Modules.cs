@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace EFCoreWshp.Models
@@ -23,6 +24,6 @@ namespace EFCoreWshp.Models
         [MaxLength(512)]
         public string Desc { get; set; }
 
-       
+        public virtual ICollection<Class> Classes { get; set; }
     }
 }

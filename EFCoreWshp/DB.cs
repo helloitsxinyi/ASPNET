@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using EFCoreWshp.Models;
 
 namespace EFCoreWshp
@@ -118,6 +119,23 @@ namespace EFCoreWshp
 
         private void SeedClassDays()
         {
+            Lecturer Kim = dbContext.Lecturers.FirstOrDefault(x => x.FirstName == "Kim" && x.LastName == "Tan");
+            Lecturer Lynn = dbContext.Lecturers.FirstOrDefault(x => x.FirstName == "Lynn" && x.LastName == "Wong");
+
+            Class class1 = dbContext.Classes.FirstOrDefault(x => x.RefCode == "ISS001");
+            Class class2 = dbContext.Classes.FirstOrDefault(x => x.RefCode == "ISS002");
+            //
+			// add to both class and lecturer as these 2 are connected to ClassDays table, also have 2 FK cols.
+            if (class1 != null)
+            {
+                // !!!! why cant add to class1 directly, need to make new classday object then can access?? !!!!
+                class1.Add(new ClassDays
+                {
+                    RunDate = new DateTime(2021, 11, 1, 9, 0, 0),
+
+                });
+
+            }
 
         }
 
