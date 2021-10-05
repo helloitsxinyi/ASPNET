@@ -11,45 +11,28 @@ namespace SearchUsers.Controllers
 {
     public class SearchController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+        private DBContext dbContext;
+
+        public SearchController(DBContext dbContext)
         {
-            List<Person> persons = new List<Person>();
+            this.dbContext = dbContext;
+        }
 
-            persons.Add(new Person
+        // GET: /<controller>/
+        public IActionResult Index(string searchStr)
+        {
+           if (searchStr == null)
             {
-                LastName = "Tan",
-                FirstName = "Jerry",
-                JobTitle = "Engineer",
-                YearsExperience = 12
-            });
+                searchStr = "";
+            }
 
-            persons.Add(new Person
-            {
-                LastName = "Wong",
-                FirstName = "Hogan",
-                JobTitle = "Data Scientist",
-                YearsExperience = 5
-            });
+            // Where method returns enumerable, so need to convert to list
+            List<Person> persons = dbContext.Persons.Where(x =>
+             x.FirstName.Contains(searchStr) || x.LastName.Contains(searchStr) || x.JobTitle.Contains(searchStr)
+            ).ToList();
 
-            persons.Add(new Person
-            {
-                LastName = "Lee",
-                FirstName = "Jean",
-                JobTitle = "HR Manager",
-                YearsExperience = 15
-            });
-
-            persons.Add(new Person
-            {
-                LastName = "Lai",
-                FirstName = "Kelly",
-                JobTitle = "Flight Attendant",
-                YearsExperience = 8
-            });
-
+            ViewData["SearchStr"] = searchStr;
             ViewData["persons"] = persons;
-
             return View();
         }
     }
