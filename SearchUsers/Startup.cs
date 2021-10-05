@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SearchUsers.Models;
 
 namespace SearchUsers
 {
@@ -24,10 +27,14 @@ namespace SearchUsers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<DBContext>(opt => opt.UseLazyLoadingProxies().UseSqlServer(
+              Configuration.GetConnectionString("db_conn"))
+      );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, [FromServices] DBContext dbContext)
         {
             if (env.IsDevelopment())
             {
@@ -50,8 +57,20 @@ namespace SearchUsers
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Search}/{action=Index}/{id?}");
             });
+
+            DB db = new DB(dbContext);
+
+            if (!dbContext.Database.CanConnect())
+            {
+                // ensure that database has been created
+                // before moving pass this line
+                dbContext.Database.EnsureCreated();
+
+                // seed the datbase
+                db.Seed();
+            }
         }
     }
 }
