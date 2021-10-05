@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EFCoreWshp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,10 +27,15 @@ namespace EFCoreWshp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<DBContext>(opt =>
+                opt.UseLazyLoadingProxies().UseSqlServer(
+                    Configuration.GetConnectionString("db_conn"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, [FromServices] DBContext dbContext)
         {
             if (env.IsDevelopment())
             {
@@ -52,6 +60,15 @@ namespace EFCoreWshp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            DB db = new DB(dbContext);
+
+            if (!dbContext.Database.CanConnect()) {           
+                dbContext.Database.EnsureCreated();
+
+                db.Seed();
+                
+            }
         }
     }
 }
