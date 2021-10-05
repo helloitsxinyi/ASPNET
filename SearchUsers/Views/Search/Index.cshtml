@@ -1,47 +1,95 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     List<Person> persons = (List<Person>)ViewData["persons"];
+    string searchStr = (string)ViewData["searchStr"];
 }
 
-<style>
-    table, td, th, tr {
-        border: 1px solid #0066cc;
-    }
+@*use site.css in wwwroot/css for styling*@
 
-    td,th {
-        text-align: center;
-        padding: 8px;
-    }
-
-    .even_row {
-        background-color: #f5fcff;
-    }
-</style>
-
-
-<div class="text-center">
-   <table>
-       <tr class="even_row">
-           <th>Name</th>
-           <th>Job Title</th>
-           <th>Years of Experience</th>
-       </tr>
-
-       @{
-           var row = 1;
-
-           foreach (Person person in persons)
-            {
-               var row_color = (row % 2 == 0) ? "class=even_row" : "";
-
-               <tr @row_color>
-                   <td>@person.FirstName @person.LastName </td>
-                   <td>@person.JobTitle</td>
-                   <td>@person.YearsExperience</td>
-               </tr>
-
-               row += 1;
-           }
-       }
-   </table>
+<div class="search">
+    @*form action: send the data to the path (Search controller in this case)*@
+    <form action="/Search/" method="POST">
+        @*set value as @searchStr, dunnid to preventDefault*@
+        Search: <input type="text" name="searchStr" value="@searchStr" />
+    </form>
 </div>
+<br />
+
+@if (persons.Count == 0)
+{
+    @*after @: is interpreted as HTML*@
+    @:There are no matches.
+}
+else
+{
+    <div class="text-center">
+        <table>
+            <tr class="even_row">
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Years of Experience</th>
+            </tr>
+
+            @{
+                var row = 1;
+
+                foreach (Person person in persons)
+                {
+                    var row_color = (row % 2 == 0) ? "class=even_row" : "";
+
+                    string firstnamehl = Highlight(searchStr, person.FirstName);
+                    string lastnamehl = Highlight(searchStr, person.LastName);
+                    string jobtitlehl = Highlight(searchStr, person.JobTitle);
+
+                    @*Html.Raw: Text output will generally be HTML encoded. Using Html.Raw allows you to
+                    output text containing html elements to the client, and have them still be rendered as such.
+                    Should be used with caution, as it exposes you to cross site scripting vulnerabilities.*@
+                    <tr @row_color>
+                        <td>@Html.Raw(firstnamehl) @Html.Raw(lastnamehl) </td>
+                        <td>@Html.Raw(jobtitlehl)</td>
+                        <td>@person.YearsExperience</td>
+                    </tr>
+
+                    row += 1;
+                }
+            }
+        </table>
+    </div>
+}
+
+@functions {
+
+    public string Highlight(string searchStr, string text)
+    {
+        if (searchStr == "")
+        {
+            return text;
+        }
+
+        @*IndexOf returns zero-based index position of first occurrence of specified string.
+        returns int index if found, if not -1. if empty, returns 0.*@
+        int pos = text.ToLower().IndexOf(searchStr.ToLower());
+        if (pos == -1)
+        {
+            return text;
+        }
+
+        if (pos == 0)
+        {
+            @*String.Substring: Retrieves a substring from this instance.
+            Substring(int, int): Retrieves a substring from this instance.
+            The substring starts at a specified character position and has a specified length.
+
+            Substring(int): Retrieves a substring from this instance.
+            The substring starts at a specified character position and continues to the end of the string.*@
+            return "<span class='hl'>" + text.Substring(0, searchStr.Length) + "</span>" + text.Substring(searchStr.Length);
+        }
+        return text.Substring(0, pos) + "<span class='hl'>"
+        + text.Substring(pos, searchStr.Length) + "</span>" + text.Substring(pos + searchStr.Length);
+    }
+    
+
+}
+
+
+

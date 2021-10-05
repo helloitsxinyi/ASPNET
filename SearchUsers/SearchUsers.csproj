@@ -6,8 +6,16 @@
 
   <ItemGroup>
     <None Remove="Views\Search\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Proxies" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Search\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.10" />
   </ItemGroup>
 </Project>
