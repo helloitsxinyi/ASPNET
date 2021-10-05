@@ -23,6 +23,7 @@ namespace SearchUsers.Controllers
                 JobTitle = "Engineer",
                 YearsExperience = 12
             });
+
             persons.Add(new Person
             {
                 LastName = "Wong",
@@ -30,6 +31,7 @@ namespace SearchUsers.Controllers
                 JobTitle = "Data Scientist",
                 YearsExperience = 5
             });
+
             persons.Add(new Person
             {
                 LastName = "Lee",
@@ -37,6 +39,7 @@ namespace SearchUsers.Controllers
                 JobTitle = "HR Manager",
                 YearsExperience = 15
             });
+
             persons.Add(new Person
             {
                 LastName = "Lai",

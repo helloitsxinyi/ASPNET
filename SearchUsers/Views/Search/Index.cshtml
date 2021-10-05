@@ -3,8 +3,45 @@
     List<Person> persons = (List<Person>)ViewData["persons"];
 }
 
+<style>
+    table, td, th, tr {
+        border: 1px solid #0066cc;
+    }
+
+    td,th {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .even_row {
+        background-color: #f5fcff;
+    }
+</style>
+
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <h2> hi im search</h2>
+   <table>
+       <tr class="even_row">
+           <th>Name</th>
+           <th>Job Title</th>
+           <th>Years of Experience</th>
+       </tr>
+
+       @{
+           var row = 1;
+
+           foreach (Person person in persons)
+            {
+               var row_color = (row % 2 == 0) ? "class=even_row" : "";
+
+               <tr @row_color>
+                   <td>@person.FirstName @person.LastName </td>
+                   <td>@person.JobTitle</td>
+                   <td>@person.YearsExperience</td>
+               </tr>
+
+               row += 1;
+           }
+       }
+   </table>
 </div>
