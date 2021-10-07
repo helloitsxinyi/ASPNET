@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreWshp", "EFCoreWshp\EF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchUsers", "SearchUsers\SearchUsers.csproj", "{20CB1EF5-E776-4DB9-B05E-638B19625BA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NETWorkshop", "ADO.NETWorkshop\ADO.NETWorkshop.csproj", "{550A204C-6735-4899-9499-ADA88FB85164}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20CB1EF5-E776-4DB9-B05E-638B19625BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550A204C-6735-4899-9499-ADA88FB85164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550A204C-6735-4899-9499-ADA88FB85164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550A204C-6735-4899-9499-ADA88FB85164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550A204C-6735-4899-9499-ADA88FB85164}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
