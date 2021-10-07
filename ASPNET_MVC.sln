@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchUsers", "SearchUsers\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NETWorkshop", "ADO.NETWorkshop\ADO.NETWorkshop.csproj", "{550A204C-6735-4899-9499-ADA88FB85164}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQWorkshop", "LINQWorkshop\LINQWorkshop.csproj", "{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{550A204C-6735-4899-9499-ADA88FB85164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{550A204C-6735-4899-9499-ADA88FB85164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{550A204C-6735-4899-9499-ADA88FB85164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
