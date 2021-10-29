@@ -31,11 +31,11 @@ else
             </tr>
 
             @{
-                var row = 1;
+                int row = 1;
 
                 foreach (Person person in persons)
                 {
-                    var row_color = (row % 2 == 0) ? "class=even_row" : "";
+                    string row_color = (row % 2 == 0) ? "class=even_row" : "";
 
                     string firstnamehl = Highlight(searchStr, person.FirstName);
                     string lastnamehl = Highlight(searchStr, person.LastName);
@@ -83,7 +83,7 @@ else
             Substring(int): Retrieves a substring from this instance.
             The substring starts at a specified character position and continues to the end of the string.*@
             return "<span class='hl'>" + text.Substring(0, searchStr.Length) + "</span>" + text.Substring(searchStr.Length);
-        }
+        } 
         return text.Substring(0, pos) + "<span class='hl'>"
         + text.Substring(pos, searchStr.Length) + "</span>" + text.Substring(pos + searchStr.Length);
     }

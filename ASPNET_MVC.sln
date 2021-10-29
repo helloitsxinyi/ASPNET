@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NETWorkshop", "ADO.NETW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQWorkshop", "LINQWorkshop\LINQWorkshop.csproj", "{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksCartWS", "TasksCartWS\TasksCartWS.csproj", "{1539CF4B-2716-4D62-B257-40489D45AE80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D66CB910-3DB2-4BEF-97F5-70FA0873D9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1539CF4B-2716-4D62-B257-40489D45AE80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1539CF4B-2716-4D62-B257-40489D45AE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1539CF4B-2716-4D62-B257-40489D45AE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1539CF4B-2716-4D62-B257-40489D45AE80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
