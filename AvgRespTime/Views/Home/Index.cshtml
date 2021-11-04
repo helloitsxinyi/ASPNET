@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    double readDuration = (double)ViewData["readDuration"];
+    double writeDuration = (double)ViewData["writeDuration"];
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Response Time</h1>
+<p>Read avg response time: <b>@readDuration</b> secs</p>
+<p>Write avg response time: <b>@writeDuration</b> secs</p>
