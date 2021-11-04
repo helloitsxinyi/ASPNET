@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using TasksCart.Models;
+using TasksCartWS.Models;
 
-
-namespace TasksCart
+namespace TasksCartWS
 {
     public class DB
     {

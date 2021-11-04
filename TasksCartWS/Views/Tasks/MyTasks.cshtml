@@ -1,0 +1,35 @@
+﻿
+@{
+    List<Models.Task> tasks =
+        (List<Models.Task>)ViewData["tasks"];
+}
+
+@if (tasks.Count == 0) {
+    <div>You have no tasks.</div>
+}
+else {
+    <table>
+        <tr class="even_row">
+            <th>Task</th>
+            <th>Effort Day</th>
+            <th>Due Date</th>
+        </tr>
+
+        @{
+            int row = 1;
+
+            foreach (TasksCart.Models.Task task in tasks)
+            {
+                string row_color = (row % 2 == 0) ? "class=even_row" : "";
+
+                <tr @row_color>
+                    <td style="text-align:left">@task.Desc</td>
+                    <td>@task.EffortDays</td>
+                    <td>@task.DueDate.ToString("dd MMM yyyy, h:mm tt")</td>
+                </tr>
+
+                row += 1;
+            }
+        }
+    </table>
+}

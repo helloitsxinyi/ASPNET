@@ -14,12 +14,25 @@ namespace LINQWorkshop
                 where s.Age >= 12 && s.Age <= 20
                 select s;
 
+            Console.WriteLine("Q1");
             foreach (Student s in iter)
             {
-                Console.WriteLine($"{s.Name}, {s.Age}");
+                Console.WriteLine($"{s.Name}, {s.Age}");                
             }
 
             //Q2
+            IEnumerable<int> iter2 =
+                from num in Numbers.numbers
+                orderby num ascending
+                select num;
+
+            Console.WriteLine("Q2");
+            foreach (int i in iter2)
+            {
+                Console.Write($"{i} ");
+            }
+
+            //Q3
 
 
         }

@@ -19,7 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Login\" />
-    <Folder Include="Views\Task\" />
+    <Folder Include="Views\Tasks\" />
     <Folder Include="Views\Signup\" />
   </ItemGroup>
 </Project>
