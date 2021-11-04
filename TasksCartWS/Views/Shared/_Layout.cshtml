@@ -18,13 +18,25 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        @if (Context.Request.Cookies["SessionId"] != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="AllTasks">All Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="MyTasks">My Tasks</a>
+                            </li>
+
+                            <li class="nav-item ml-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Logout" asp-action="Index">Logout</a>
+                            </li>
+                        }
                     </ul>
+
+                    @if (Context.Request.Cookies["Username"] != null)
+                        {
+                            <div style="font-weight: bold">[[@Context.Request.Cookies["Username"]]</div>
+                        }
                 </div>
             </div>
         </nav>

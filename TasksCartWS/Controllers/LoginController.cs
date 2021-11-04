@@ -64,10 +64,13 @@ namespace TasksCartWS.Controllers
             dbContext.Sessions.Add(session);
             dbContext.SaveChanges();
 
+            // important to add in username and sessionId data. Session Id is for retrieving info, Username to display in the Tasks page
             Response.Cookies.Append("SessionId", session.Id.ToString());
             Response.Cookies.Append("Username", user.Username);
-
+ 
             return RedirectToAction("AllTasks", "Tasks");
         }
+
+      
     }
 }

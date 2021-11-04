@@ -1,0 +1,20 @@
+﻿@{
+    List<TasksCartWS.Models.Task> tasks = (List<TasksCartWS.Models.Task>)ViewData["Tasks"];
+}
+
+@section Scripts {
+    <script src="~/js/Signup.js"></script>
+}
+
+
+<div style="text-align:center">
+    <div class="task_list" style="display:inline-block">
+        @foreach (TasksCartWS.Models.Task task in tasks)
+        {
+            <div id=@task.Id class="a_task">
+                <div>@task.Desc</div>
+                <div class="task_attr"><b>Effort:</b> @task.EffortDays days</div>
+            </div>
+        }
+    </div>
+</div>
